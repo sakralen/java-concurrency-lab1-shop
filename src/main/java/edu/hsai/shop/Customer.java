@@ -6,7 +6,7 @@ public class Customer implements Runnable {
 
     public Customer(Shop shop) {
         this.shop = shop;
-        ticket = shop.getNextTicket();
+        ticket = shop.getTicket();
         System.out.printf("Customer has entered the shop and grabbed ticket № %d!%n", ticket);
     }
 
