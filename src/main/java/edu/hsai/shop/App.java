@@ -7,8 +7,8 @@ public class App {
 
     public static void main(String[] args) throws InterruptedException {
         int maxTickets = 10;
-        int maxCustomers = 10;
-        int maxArrivalInterval = 1;
+        int maxCustomers = 15;
+        int maxArrivalInterval = 3;
         int maxServeTime = 5;
 
         if (args.length > 0) {
