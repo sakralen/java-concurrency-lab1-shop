@@ -9,7 +9,7 @@ public class App {
         int maxTickets = 10;
         int maxCustomers = 10;
         int maxArrivalInterval = 1;
-        int maxServeTime = 10;
+        int maxServeTime = 5;
 
         if (args.length > 0) {
             maxTickets = Integer.parseInt(args[0]);

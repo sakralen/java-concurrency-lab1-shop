@@ -10,6 +10,7 @@ public class Customer implements Runnable {
         System.out.printf("Customer has entered the shop and grabbed ticket № %d!%n", ticket);
     }
 
+    @Override
     public void run() {
         shop.serveCustomer(ticket);
     }
