@@ -5,10 +5,12 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Shop {
-    private final int MIN_TICKET_NUMBER = 1;
     private final int MAX_TICKET_NUMBER;
     private final int MAX_SERVICE_TIME;
-    private final int S_TO_MS_MULTIPLIER = 1000;
+    private static final int S_TO_MS_MULTIPLIER = 1000;
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_BLUE = "\u001B[34m";
     private int currentTicket = 1;
     private Lock lock = new ReentrantLock(true);
 
@@ -26,9 +28,9 @@ public class Shop {
     public void serveCustomer(int ticket) {
         lock.lock();
         try {
-            System.out.printf("Serving customer with ticket № %d...%n", ticket);
+            System.out.printf(ANSI_BLUE + "Serving customer with ticket № %d...%n" + ANSI_RESET, ticket);
             Thread.sleep((new Random().nextInt(MAX_SERVICE_TIME) + 1) * S_TO_MS_MULTIPLIER);
-            System.out.printf("Finished serving customer with ticket № %d!%n", ticket);
+            System.out.printf(ANSI_GREEN + "Finished serving customer with ticket № %d!%n" + ANSI_RESET, ticket);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         } finally {
